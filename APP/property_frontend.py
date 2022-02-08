@@ -22,19 +22,20 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 
 
 ################################################################################
-# Exlusive properties properties Information
+# properties properties Information
 
-# Database of Exlusive properties including their name, digital address, detail and  cost per Ether.
+# Database of properties including their name, digital address, detail and  cost per Ether.
 # A single Ether is currently valued at $1,500
 properties_database = {
-    "Lane": ["Lane", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "4.3", .20, "Images/lane.jpeg"],
+    "Montauk Surfside": ["Montauk Surfside", "66 Surfside Ave, Montauk, NY 11954", "4.3", 6333, "Images/lane.jpeg", "Images/lane.jpeg"],
     "Ash": ["Ash", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "5.0", .33, "Images/ash.jpeg"],
     "Jo": ["Jo", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.7", .19, "Images/jo.jpeg"],
     "Kendall": ["Kendall", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.1", .16, "Images/kendall.jpeg"]
+ 
 }
 
-# A list of the Exlusive properties propertiess first names
-properties = ["Lane", "Ash", "Jo", "Kendall"]
+# A list of the properties propertiess first names
+properties = ["Montauk Surfside", "Ash", "Jo", "Kendall"]
 
 
 def get_properties():
@@ -42,11 +43,12 @@ def get_properties():
     db_list = list(properties_database.values())
 
     for number in range(len(properties)):
-        st.image(db_list[number][4], width=200)
+        st.image(db_list[number][4], width=100)
         st.write("Name: ", db_list[number][0])
         st.write("Property Address: ", db_list[number][1])
         st.write("Property Rating: ", db_list[number][2])
-        st.write("Cost per Ether: ", db_list[number][3], "eth")
+        st.write("Ethereum Price: ", db_list[number][3], "eth")
+        st.text(" \n")
         st.text(" \n")
 
 ################################################################################
@@ -91,22 +93,22 @@ st.sidebar.markdown("## properties Name, quantity of Shares, and Ethereum Addres
 # Identify the FinTech Hire properties
 properties = properties_database[properties][0]
 
-# Write the Exlusive properties properties's name to the sidebar
+# Write the properties  name to the sidebar
 st.sidebar.write(properties)
 
-# Identify the Exlusive properties properties's hourly rate
-shares_qty = properties_database[properties][3]
+# Identify the properties  fractional share
+fractional_share = properties_database[properties][3]
 
-# Write the inTech Finder properties's hourly rate to the sidebar
-st.sidebar.write(shares_qty)
+# Write the inTech Finder properties' fractional share to the sidebar
+st.sidebar.write(fractional_share)
 
-# Identify the Exlusive properties properties's Ethereum Address
+# Identify the properties properties's Ethereum Address
 properties_address = properties_database[properties][1]
 
 # Write the inTech Finder properties's Ethereum Address to the sidebar
 st.sidebar.write(properties_address)
 
-# Write the Exlusive properties properties's name to the sidebar
+# Write the properties properties's name to the sidebar
 
 st.sidebar.markdown("## Total Cost in Ether")
 
@@ -118,7 +120,7 @@ st.sidebar.markdown("## Total Cost in Ether")
 # Calculate total `Cost` for the properties by multiplying the properties’s hourly
 # rate from the properties database (`properties_database[properties][3]`) by the
 # value of the `Shares` variable
-Cost  = shares_qty*Shares
+Cost  = fractional_share*Shares
 
 
 # Write the `Cost` calculation to the Streamlit sidebar
@@ -149,5 +151,5 @@ if st.sidebar.button("Make Payment"):
     st.balloons()
 
 # The function that starts the Streamlit application
-# Writes Exlusive properties propertiess to the Streamlit page
+# Writes properties propertiess to the Streamlit page
 get_properties()
