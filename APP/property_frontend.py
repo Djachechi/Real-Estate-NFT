@@ -25,17 +25,17 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 # properties properties Information
 
 # Database of properties including their name, digital address, detail and  cost per Ether.
-# A single Ether is currently valued at $1,500
+# A single Ether is currently valued at $3000
 properties_database = {
-    "Montauk Surfside": ["Montauk Surfside", "66 Surfside Ave, Montauk, NY 11954", "4.3", 6333, "Images/lane.jpeg", "Images/lane.jpeg"],
-    "Ash": ["Ash", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "5.0", .33, "Images/ash.jpeg"],
-    "Jo": ["Jo", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.7", .19, "Images/jo.jpeg"],
-    "Kendall": ["Kendall", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.1", .16, "Images/kendall.jpeg"]
+    "Montauk Surfside": ["Montauk Surfside", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "66 Surfside Ave, Montauk, NY 11954", .3, "Images/Montauk.jpg"],
+    "The Baldhead House": ["The Baldhead House", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "218 Station House Way, Bald Head Island, NC 28461", 1990, "Images/Baldhead.jpg"],
+    "Cliff House": ["Cliff House", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "62 Sols Cliff Rd, Bar Harbor, ME 04609", 2970, "Images/Cliff.jpg"],
+    "The Delaware Farm": ["The Delaware Farm", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "23556 Sloan Rd, Harbeson, DE 19951",1585, "Images/Delaware.jpg"]
  
 }
 
 # A list of the properties propertiess first names
-properties = ["Montauk Surfside", "Ash", "Jo", "Kendall"]
+properties = ["Montauk Surfside", "The Baldhead House", "Cliff House", "The Delaware Farm"]
 
 
 def get_properties():
@@ -43,13 +43,13 @@ def get_properties():
     db_list = list(properties_database.values())
 
     for number in range(len(properties)):
-        st.image(db_list[number][4], width=100)
+        st.image(db_list[number][4], width=400)
         st.write("Name: ", db_list[number][0])
-        st.write("Property Address: ", db_list[number][1])
-        st.write("Property Rating: ", db_list[number][2])
+        st.write("Ethereum  Address: ", db_list[number][1])
+        st.write("Property Address: ", db_list[number][2])
         st.write("Ethereum Price: ", db_list[number][3], "eth")
         st.text(" \n")
-        st.text(" \n")
+        
 
 ################################################################################
 # Streamlit Code
@@ -83,12 +83,12 @@ st.sidebar.write(get_balance)
 ##########################################
 
 # Create a select box to chose a FinTech Hire properties
-properties = st.sidebar.selectbox('Select a properties', properties)
+properties = st.sidebar.selectbox('Select a property', properties)
 
 # Create a input field to record the number of Shares the properties worked
 Shares = st.sidebar.number_input("Quantity  of Shares")
 
-st.sidebar.markdown("## properties Name, quantity of Shares, and Ethereum Address")
+st.sidebar.markdown("## Estate Name, Quantity of Shares, and Ethereum Address")
 
 # Identify the FinTech Hire properties
 properties = properties_database[properties][0]
