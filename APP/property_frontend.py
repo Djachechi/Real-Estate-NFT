@@ -27,10 +27,10 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 # Database of Exlusive properties including their name, digital address, detail and  cost per Ether.
 # A single Ether is currently valued at $1,500
 properties_database = {
-    "Lane": ["Lane", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "4.3", .20, "../Images/lane.jpeg"],
-    "Ash": ["Ash", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "5.0", .33, "../Images/ash.jpeg"],
-    "Jo": ["Jo", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.7", .19, "../Images/jo.jpeg"],
-    "Kendall": ["Kendall", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.1", .16, "../Images/kendall.jpeg"]
+    "Lane": ["Lane", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "4.3", .20, "Images/lane.jpeg"],
+    "Ash": ["Ash", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "5.0", .33, "Images/ash.jpeg"],
+    "Jo": ["Jo", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.7", .19, "Images/jo.jpeg"],
+    "Kendall": ["Kendall", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.1", .16, "Images/kendall.jpeg"]
 }
 
 # A list of the Exlusive properties propertiess first names
@@ -38,14 +38,14 @@ properties = ["Lane", "Ash", "Jo", "Kendall"]
 
 
 def get_properties():
-    """Display the database of Exlusive propertiess properties information."""
+    """Display the database of properties information."""
     db_list = list(properties_database.values())
 
     for number in range(len(properties)):
         st.image(db_list[number][4], width=200)
         st.write("Name: ", db_list[number][0])
-        st.write("Ethereum Account Address: ", db_list[number][1])
-        st.write("Exlusive properties Rating: ", db_list[number][2])
+        st.write("Property Address: ", db_list[number][1])
+        st.write("Property Rating: ", db_list[number][2])
         st.write("Cost per Ether: ", db_list[number][3], "eth")
         st.text(" \n")
 
@@ -53,8 +53,8 @@ def get_properties():
 # Streamlit Code
 
 # Streamlit application headings
-st.markdown("# Exlusive properties!")
-st.markdown("## Purchase your special home!")
+st.markdown("# Property Listings")
+st.markdown("## Available Investments ")
 st.text(" \n")
 
 ################################################################################

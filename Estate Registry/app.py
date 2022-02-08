@@ -21,8 +21,8 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 def load_contract():
 
     # Load the contract ABI
-    with open(Path('./Estate Registry/compiled/EstateRegistry_abi.json')) as f:
-        contract_abi = json.load(f)
+    with open(Path('./EstateRegistry_abi.json')) as f:
+        EstateRegistry_abi = json.load(f)
 
     # Set the contract address (this is the address of the deployed contract)
     contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
@@ -30,7 +30,7 @@ def load_contract():
     # Get the contract
     contract = w3.eth.contract(
         address=contract_address,
-        abi=contract_abi
+        abi=EstateRegistry_abi
     )
 
     return contract
@@ -42,7 +42,7 @@ contract = load_contract()
 ################################################################################
 # Helper functions to pin files and json to Pinata
 ################################################################################
-
+2
 
 def pin_property(property_name, property_file):
     # Pin the file to IPFS with Pinata
@@ -67,7 +67,7 @@ def pin_appraisal_report(report_content):
     return report_ipfs_hash
 
 
-st.title("Art Registry Appraisal System")
+st.title("Estate Registry Appraisal System")
 st.write("Choose an account to get started")
 accounts = w3.eth.accounts
 address = st.selectbox("Select Account", options=accounts)
@@ -78,7 +78,7 @@ st.markdown("---")
 ################################################################################
 st.markdown("## Register New property")
 property_name = st.text_input("Enter the name of the property")
-artist_name = st.text_input("Enter the artist name")
+artist_name = st.text_input("Enter property information")
 initial_appraisal_value = st.text_input("Enter the initial appraisal amount")
 
 # Use the Streamlit `file_uploader` function create the list of digital image file types(jpg, jpeg, or png) that will be uploaded to Pinata.
@@ -108,9 +108,9 @@ st.markdown("---")
 ################################################################################
 # Appraise Art
 ################################################################################
-st.markdown("## Appraise property")
+st.markdown("## Appraise Property")
 tokens = contract.functions.totalSupply().call()
-token_id = st.selectbox("Choose an Art Token ID", list(range(tokens)))
+token_id = st.selectbox("Choose a Property Token ID", list(range(tokens)))
 new_appraisal_value = st.text_input("Enter the new appraisal amount")
 appraisal_report_content = st.text_area("Enter details for the Appraisal Report")
 
