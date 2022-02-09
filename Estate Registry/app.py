@@ -78,7 +78,7 @@ st.markdown("---")
 ################################################################################
 st.markdown("## Register New property")
 property_name = st.text_input("Enter the name of the property")
-artist_name = st.text_input("Enter property information")
+property_information = st.text_input("Enter property information")
 initial_appraisal_value = st.text_input("Enter the initial appraisal amount")
 
 # Use the Streamlit `file_uploader` function create the list of digital image file types(jpg, jpeg, or png) that will be uploaded to Pinata.
@@ -90,10 +90,10 @@ if st.button("Register property"):
 
     property_uri = f"ipfs://{property_ipfs_hash}"
 
-    tx_hash = contract.functions.registerproperty(
+    tx_hash = contract.functions.registerProperty(
         address,
         property_name,
-        artist_name,
+        property_information,
         int(initial_appraisal_value),
         property_uri
     ).transact({'from': address, 'gas': 1000000})

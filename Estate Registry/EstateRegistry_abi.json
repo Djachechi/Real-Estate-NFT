@@ -123,11 +123,6 @@
 			},
 			{
 				"internalType": "string",
-				"name": "Location",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
 				"name": "PropertyHistory",
 				"type": "string"
 			},
@@ -327,11 +322,6 @@
 			{
 				"internalType": "string",
 				"name": "PropertyHistory",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "Location",
 				"type": "string"
 			},
 			{

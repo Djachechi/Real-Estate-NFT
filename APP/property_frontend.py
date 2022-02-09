@@ -27,7 +27,7 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 # Database of properties including their name, digital address, detail and  cost per Ether.
 # A single Ether is currently valued at $3000
 properties_database = {
-    "Montauk Surfside": ["Montauk Surfside", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "66 Surfside Ave, Montauk, NY 11954", .3, "Images/Montauk.jpg"],
+    "Montauk Surfside": ["Montauk Surfside", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "66 Surfside Ave, Montauk, NY 11954", 6333, "Images/Montauk.jpg"],
     "The Baldhead House": ["The Baldhead House", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "218 Station House Way, Bald Head Island, NC 28461", 1990, "Images/Baldhead.jpg"],
     "Cliff House": ["Cliff House", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "62 Sols Cliff Rd, Bar Harbor, ME 04609", 2970, "Images/Cliff.jpg"],
     "The Delaware Farm": ["The Delaware Farm", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "23556 Sloan Rd, Harbeson, DE 19951",1585, "Images/Delaware.jpg"]
@@ -47,7 +47,7 @@ def get_properties():
         st.write("Name: ", db_list[number][0])
         st.write("Ethereum  Address: ", db_list[number][1])
         st.write("Property Address: ", db_list[number][2])
-        st.write("Ethereum Price: ", db_list[number][3], "eth")
+        st.write("Ethereum Price : ", db_list[number][3], "eth")
         st.text(" \n")
         
 
@@ -78,7 +78,7 @@ st.sidebar.write(account.address)
 
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
-st.sidebar.write(get_balance)
+#st.sidebar.write(get_balance)
 
 ##########################################
 
