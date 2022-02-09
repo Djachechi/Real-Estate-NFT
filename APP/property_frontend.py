@@ -22,7 +22,7 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 
 
 ################################################################################
-# properties properties Information
+# properties Information
 
 # Database of properties including their name, digital address, detail and  cost per Ether.
 # A single Ether is currently valued at $3000
@@ -34,7 +34,7 @@ properties_database = {
  
 }
 
-# A list of the properties propertiess first names
+# A list of the properties
 properties = ["Montauk Surfside", "The Baldhead House", "Cliff House", "The Delaware Farm"]
 
 
@@ -82,7 +82,7 @@ st.sidebar.write(account.address)
 
 ##########################################
 
-# Create a select box to chose a FinTech Hire properties
+# Create a select box to chose a property
 properties = st.sidebar.selectbox('Select a property', properties)
 
 # Create a input field to record the number of Shares the properties worked
@@ -90,25 +90,25 @@ Shares = st.sidebar.number_input("Quantity  of Shares")
 
 st.sidebar.markdown("## Estate Name, Quantity of Shares, and Ethereum Address")
 
-# Identify the FinTech Hire properties
+# Identify the property
 properties = properties_database[properties][0]
 
-# Write the properties  name to the sidebar
+# Write the property   name to the sidebar
 st.sidebar.write(properties)
 
-# Identify the properties  fractional share
+# Identify the property  fractional share
 fractional_share = properties_database[properties][3]
 
 # Write the inTech Finder properties' fractional share to the sidebar
 st.sidebar.write(fractional_share)
 
-# Identify the properties properties's Ethereum Address
+# Identify the property Ethereum Address
 properties_address = properties_database[properties][1]
 
-# Write the inTech Finder properties's Ethereum Address to the sidebar
+# Write the property Ethereum Address to the sidebar
 st.sidebar.write(properties_address)
 
-# Write the properties properties's name to the sidebar
+# Write the property name to the sidebar
 
 st.sidebar.markdown("## Total Cost in Ether")
 
@@ -117,8 +117,8 @@ st.sidebar.markdown("## Total Cost in Ether")
 
 ##########################################
 
-# Calculate total `Cost` for the properties by multiplying the properties’s hourly
-# rate from the properties database (`properties_database[properties][3]`) by the
+# Calculate total `Cost` for the properties by multiplying the property fractional shares
+# rate from the property database (`properties_database[properties][3]`) by the
 # value of the `Shares` variable
 Cost  = fractional_share*Shares
 
