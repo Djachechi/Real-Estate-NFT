@@ -50,9 +50,6 @@ __Live Demo__
 The following is a recorded video of a live demo of the application's property listing: 
 ![Property Frontend Demo](https://user-images.githubusercontent.com/87338709/153273216-8724d1ee-5f64-4cb7-917e-8ea21de750f6.mp4)
 
-### Estate Registry & Appraisal System
-![Estate Registry](https://github.com/Djachechi/Project-3/blob/main/Screenshots/Estate_registry.JPG)
-
 ### In-App Property Registration
 
 __Tokenization__
@@ -62,6 +59,9 @@ __Tokenization__
 3. User enters property information along with the initial appraisal amount.
 4. User uploads an image of the property to be tokenized.
 5. Upon clicking "Register Property", the user receives a confirmation that the property was successfully tokenized.
+
+### Estate Registry & Appraisal System
+![Estate Registry](https://github.com/Djachechi/Project-3/blob/main/Screenshots/Estate_registry.JPG)
 
 ### Historical Appraisal Reporting
 
