@@ -43,8 +43,13 @@ The property listings page provides a list of the current property investment op
 4. The wallet then displays the property, address, and the total cost in Ether
 5. Once they click "Make Payment" they will receive a confirmation message that the transaction was completed including the TX hash
 
-### Transaction Confirmation
+### In-App Transaction Confirmation
 ![TX confirmation](https://github.com/Djachechi/Project-3/blob/main/Screenshots/transaction_hash.JPG)
+
+### Confirmation in Ganache testnet
+
+![ganache confirmation](https://github.com/Djachechi/Project-3/blob/main/Screenshots/Ganache_confirmation.PNG)
+
 
 __Live Demo__
 The following is a recorded video of a live demo of the application's property listing: 
