@@ -43,6 +43,9 @@ The property listings page provides a list of the current property investment op
 4. The wallet then displays the property, address, and the total cost in Ether
 5. Once they click "Make Payment" they will receive a confirmation message that the transaction was completed including the TX hash
 
+### Transaction Confirmation
+![TX confirmation](https://github.com/Djachechi/Project-3/blob/main/Screenshots/transaction_hash.JPG)
+
 __Live Demo__
 The following is a recorded video of a live demo of the application's property listing: 
 ![Property Frontend Demo](https://user-images.githubusercontent.com/87338709/153273216-8724d1ee-5f64-4cb7-917e-8ea21de750f6.mp4)
@@ -52,11 +55,18 @@ The following is a recorded video of a live demo of the application's property l
 
 ### In-App Property Registration
 
+__Tokenization__
+
 1. User selects account to associate with property token.
 2. User enters the name of the property they wish to tokenize.
 3. User enters property information along with the initial appraisal amount.
 4. User uploads an image of the property to be tokenized.
 5. Upon clicking "Register Property", the user receives a confirmation that the property was successfully tokenized.
+
+### Historical Appraisal Reporting
+
+Users have the ability to access historical appraisal information by selecting the property ID from the drop down.
+![Appraisal Report History](https://github.com/Djachechi/Project-3/blob/main/Screenshots/Appraisal_history.JPG)
 
 __Live Demo__
 
