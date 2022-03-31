@@ -151,5 +151,5 @@ if st.sidebar.button("Make Payment"):
     st.balloons()
 
 # The function that starts the Streamlit application
-# Writes properties propertiess to the Streamlit page
+# Writes properties properties to the Streamlit page
 get_properties()

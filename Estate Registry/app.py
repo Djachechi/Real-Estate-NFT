@@ -16,7 +16,6 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 # Load_Contract Function
 ################################################################################
 
-
 @st.cache(allow_output_mutation=True)
 def load_contract():
 
@@ -35,14 +34,13 @@ def load_contract():
 
     return contract
 
-
 # Load the contract
 contract = load_contract()
 
 ################################################################################
 # Helper functions to pin files and json to Pinata
 ################################################################################
-2
+# 2
 
 def pin_property(property_name, property_file):
     # Pin the file to IPFS with Pinata
